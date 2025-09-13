@@ -1,0 +1,419 @@
+.monkey-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 200px;
+}
+
+.monkey {
+  position: relative;
+  width: 120px;
+  height: 150px;
+  transition: all 0.3s ease;
+}
+
+/* Monkey Face */
+.monkey-face {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.face-circle {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #8B4513, #A0522D);
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  animation: faceGlow 2s ease-in-out infinite;
+}
+
+/* Ears */
+.ear {
+  width: 25px;
+  height: 25px;
+  background: #8B4513;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  animation: earWiggle 3s ease-in-out infinite;
+}
+
+.left-ear {
+  left: 5px;
+  animation-delay: 0.5s;
+}
+
+.right-ear {
+  right: 5px;
+  animation-delay: 1s;
+}
+
+/* Eyes */
+.eye {
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  animation: blink 4s ease-in-out infinite;
+}
+
+.left-eye {
+  left: 20px;
+}
+
+.right-eye {
+  right: 20px;
+}
+
+.pupil {
+  width: 8px;
+  height: 8px;
+  background: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 3.5px;
+  left: 3.5px;
+  transition: all 0.3s ease;
+}
+
+/* Nose */
+.nose {
+  width: 8px;
+  height: 6px;
+  background: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Mouth */
+.mouth {
+  width: 20px;
+  height: 10px;
+  border: 2px solid #333;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
+
+/* Cheeks */
+.cheek {
+  width: 12px;
+  height: 8px;
+  background: #FFB6C1;
+  border-radius: 50%;
+  position: absolute;
+  top: 40px;
+  opacity: 0.7;
+}
+
+.left-cheek {
+  left: 10px;
+}
+
+.right-cheek {
+  right: 10px;
+}
+
+/* Body */
+.monkey-body {
+  width: 60px;
+  height: 40px;
+  background: linear-gradient(135deg, #8B4513, #A0522D);
+  border-radius: 30px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: -10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Arms */
+.arm {
+  width: 8px;
+  height: 25px;
+  background: #8B4513;
+  border-radius: 4px;
+  position: absolute;
+  top: 5px;
+  animation: armSwing 2s ease-in-out infinite;
+}
+
+.left-arm {
+  left: -5px;
+  transform: rotate(-20deg);
+  animation-delay: 0.5s;
+}
+
+.right-arm {
+  right: -5px;
+  transform: rotate(20deg);
+  animation-delay: 1s;
+}
+
+/* Hands */
+.hand {
+  width: 12px;
+  height: 12px;
+  background: #8B4513;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -5px;
+  left: -2px;
+}
+
+/* Legs */
+.leg {
+  width: 10px;
+  height: 20px;
+  background: #8B4513;
+  border-radius: 5px;
+  position: absolute;
+  bottom: -15px;
+  animation: legBounce 1.5s ease-in-out infinite;
+}
+
+.left-leg {
+  left: 15px;
+  animation-delay: 0.3s;
+}
+
+.right-leg {
+  right: 15px;
+  animation-delay: 0.6s;
+}
+
+/* Feet */
+.foot {
+  width: 15px;
+  height: 8px;
+  background: #8B4513;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -5px;
+  left: -2.5px;
+}
+
+/* Message Bubble */
+.message-bubble {
+  background: white;
+  padding: 12px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin-top: 15px;
+  position: relative;
+  max-width: 250px;
+  text-align: center;
+  animation: bubblePop 0.5s ease-out;
+  border: 2px solid #667eea;
+}
+
+.message-text {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.bubble-tail {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid white;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Animations */
+@keyframes faceGlow {
+  0%, 100% { box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
+  50% { box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4); }
+}
+
+@keyframes earWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+@keyframes armSwing {
+  0%, 100% { transform: rotate(-20deg); }
+  50% { transform: rotate(-30deg); }
+}
+
+@keyframes legBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes bubblePop {
+  0% { 
+    transform: scale(0.8); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+/* State-based animations */
+.monkey.typing .pupil {
+  animation: lookAround 2s ease-in-out infinite;
+}
+
+.monkey.typing .mouth {
+  animation: typingMouth 0.5s ease-in-out infinite;
+}
+
+.monkey.happy .mouth {
+  border-radius: 50%;
+  height: 15px;
+  background: #333;
+  border: none;
+}
+
+.monkey.happy .cheek {
+  background: #FF69B4;
+  animation: happyCheek 0.5s ease-in-out;
+}
+
+.monkey.sad .mouth {
+  border-radius: 50%;
+  height: 8px;
+  border-top: 2px solid #333;
+  border-bottom: none;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.monkey.sad .eye {
+  transform: scaleY(0.7);
+}
+
+.monkey.thinking .pupil {
+  animation: thinkingLook 3s ease-in-out infinite;
+}
+
+.monkey.thinking .mouth {
+  border-radius: 50%;
+  height: 6px;
+  width: 6px;
+  background: #333;
+  border: none;
+}
+
+/* Additional animations */
+@keyframes lookAround {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(2px, -1px); }
+  50% { transform: translate(0, 0); }
+  75% { transform: translate(-2px, -1px); }
+}
+
+@keyframes typingMouth {
+  0%, 100% { transform: translateX(-50%) scaleY(1); }
+  50% { transform: translateX(-50%) scaleY(0.8); }
+}
+
+@keyframes happyCheek {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes thinkingLook {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(0, -2px); }
+  50% { transform: translate(0, 0); }
+  75% { transform: translate(0, -1px); }
+}
+
+/* Message bubble animations for different states */
+.message-bubble.happy {
+  background: linear-gradient(135deg, #FFE5E5, #FFF);
+  border-color: #FF69B4;
+  animation: happyBubble 0.5s ease-out;
+}
+
+.message-bubble.sad {
+  background: linear-gradient(135deg, #E5F3FF, #FFF);
+  border-color: #87CEEB;
+  animation: sadBubble 0.5s ease-out;
+}
+
+.message-bubble.typing {
+  background: linear-gradient(135deg, #F0F8FF, #FFF);
+  border-color: #87CEEB;
+  animation: typingBubble 0.5s ease-out;
+}
+
+.message-bubble.thinking {
+  background: linear-gradient(135deg, #FFF8DC, #FFF);
+  border-color: #DAA520;
+  animation: thinkingBubble 0.5s ease-out;
+}
+
+@keyframes happyBubble {
+  0% { transform: scale(0.8) rotate(-5deg); }
+  50% { transform: scale(1.1) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes sadBubble {
+  0% { transform: scale(0.8); }
+  100% { transform: scale(1); }
+}
+
+@keyframes typingBubble {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes thinkingBubble {
+  0% { transform: scale(0.8); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .monkey {
+    width: 100px;
+    height: 120px;
+  }
+  
+  .face-circle {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .message-bubble {
+    max-width: 200px;
+    padding: 10px 14px;
+  }
+  
+  .message-text {
+    font-size: 13px;
+  }
+} 

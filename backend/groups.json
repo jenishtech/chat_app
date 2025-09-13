@@ -1,0 +1,15 @@
+[
+  {
+    "name": "tea",
+    "members": [
+      "jenish",
+      "madhav"
+    ],
+    "creator": "jenish",
+    "admins": ["jenish"],
+    "avatarUrl": "",
+    "description": "",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "pinnedMessages": []
+  }
+]
